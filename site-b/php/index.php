@@ -1,0 +1,2 @@
+<?
+echo "Site B";

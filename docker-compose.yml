@@ -1,0 +1,40 @@
+version: '3.3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    volumes:
+      - type: volume
+        source: site-a
+        target: /var/www/html/site-a
+      - type: volume
+        source: site-a
+        target: /var/www/html/site-b
+      - ./sites:/etc/nginx/conf.d/
+    ports:
+      - '8080:80'
+    links:
+      - site-a
+  site-a:
+    image: site-a:latest
+    container_name: site-a
+    expose:
+      - '9000'
+    volumes:
+      - type: volume
+        source: site-a
+        target: /var/www/html/site-a
+  site-b:
+    image: site-b:latest
+    container_name: site-b
+    expose:
+      - '9000'
+    volumes:
+      - type: volume
+        source: site-b
+        target: /var/www/html/site-b
+
+volumes:
+  site-a:
+  site-b:
