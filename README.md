@@ -1,4 +1,4 @@
-## PHP + MSSQL + nginx
+## PHP + MSSQL + nginx + node/express
 
 Here is a example of two or more php websites inside separate dockers running on a custom php-fpm image with a nginx serving the two websites.
 
