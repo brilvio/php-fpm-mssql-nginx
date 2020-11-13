@@ -4,3 +4,6 @@ cd site-a
 cd ..
 cd site-b
 ./build.sh
+cd ..
+cd site-c
+./build.sh

@@ -16,6 +16,8 @@ services:
       - '8080:80'
     links:
       - site-a
+      - site-b
+      - site-c
   site-a:
     image: site-a:latest
     container_name: site-a
@@ -34,6 +36,11 @@ services:
       - type: volume
         source: site-b
         target: /var/www/html/site-b
+  site-c:
+    image: site-c:latest
+    container_name: site-c
+    expose:
+      - '80'
 
 volumes:
   site-a:
