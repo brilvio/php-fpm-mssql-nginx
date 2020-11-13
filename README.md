@@ -9,13 +9,13 @@ But now that I made this example it is easy.
 Just remember to delete de volumes when updating the images.
 
 ## How to use it
-```sh
+```bash
 chmod +x build-dockers.sh
 
 docker-compose up -d
 ```
 
 ## To remove volumes when going down
-```sh
+```bash
 docker-compose down -v
 ```
